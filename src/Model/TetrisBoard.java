@@ -1,7 +1,5 @@
 package Model;
 
-
-import java.awt.event.KeyEvent;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Stack;
@@ -61,7 +59,7 @@ public class TetrisBoard {
 
     private void createNewBlock() {
 
-        if(tetrominoCycle.size() == 0){ // 테트리스 7-bag 시스템
+        if (tetrominoCycle.size() == 0) { // 테트리스 7-bag 시스템
             HashSet<Tetromino> set = new HashSet<>();
             set.add(new TetrominoI());
             set.add(new TetrominoJ());
@@ -71,8 +69,8 @@ public class TetrisBoard {
             set.add(new TetrominoT());
             set.add(new TetrominoZ());
             Iterator<Tetromino> it = set.iterator();
-            while(it.hasNext())
-            tetrominoCycle.push(it.next());
+            while (it.hasNext())
+                tetrominoCycle.push(it.next());
         }
 
         this.block = tetrominoCycle.pop();
@@ -93,7 +91,7 @@ public class TetrisBoard {
     }
 
     private void downBottom() {
-        while(downBlock());
+        while (downBlock()) ;
     }
 
     // 움직이기 전의 좌표에 표시된 블럭을 지우고, 움직인 부분에 다시 그림
